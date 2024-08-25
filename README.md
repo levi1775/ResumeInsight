@@ -38,7 +38,6 @@ Follow these steps to set up the project locally:
    ```bash
    jupyter notebook
 
-
 ## Usage
 
 ### Resume Categorization:
@@ -92,6 +91,16 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **v1.0.0**: Initial release with resume categorization and job recommendation features.
 
+## Demo 
+
+Here is a demo of the resume parser in action:
+
+<video width="640" height="360" controls>
+  <source src="https://github.com/USERNAME/REPOSITORY_NAME/raw/main/VIDEO_FILE_NAME.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+  
+
 ## References and Further Reading
 
 - [Spacy](https://spacy.io/)
@@ -100,4 +109,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact Information
 
-For any inquiries, please contact Vedant Pimple at [your.email@example.com](mailto:your.email@example.com).
+For any inquiries, please contact Vedant Pimple at [your.email@example.com](mailto:vedantpimple1775@gmail.com).
