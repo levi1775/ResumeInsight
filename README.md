@@ -24,7 +24,7 @@ Follow these steps to set up the project locally:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/YourGitHubUsername/ResumeParser.git
+   git clone https://github.com/levi1775/ResumeParser.git
    cd ResumeParser
 2. **Create and activate a virtual environment (optional but recommended)**:    
    ```bash
@@ -109,4 +109,4 @@ Here is a demo of the resume parser in action:
 
 ## Contact Information
 
-For any inquiries, please contact Vedant Pimple at [your.email@example.com](mailto:vedantpimple1775@gmail.com).
+For any inquiries, please contact Vedant Pimple at [vedantpimple1775@gmail.com](mailto:vedantpimple1775@gmail.com).
