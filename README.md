@@ -26,6 +26,19 @@ Follow these steps to set up the project locally:
    ```bash
    git clone https://github.com/YourGitHubUsername/ResumeParser.git
    cd ResumeParser
+2. **Create and activate a virtual environment (optional but recommended)**:    
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+3. **Install the required dependencies**:    
+   ```bash
+   pip install -r requirements.txt
+   
+4. **Run the Jupyter Notebook**:    
+   ```bash
+   jupyter notebook
+
+
 ## Usage
 
 ### Resume Categorization:
