@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Screening AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #ff6f3d;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 500;
+            font-size: 28px;
+            color: #ff6f3d;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features ul li {
+            display: inline-block;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="file"] {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        input[type="file"]:hover {
+            border-color: #ff6f3d;
+        }
+
+        input[type="submit"] {
+            padding: 12px 25px;
+            background-color: #ff6f3d;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #e65b2d;
+        }
+
+        .result-container {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .result-container hr {
+            margin: 20px 0;
+            border: 0;
+            height: 1px;
+            background-color: #ccc;
+        }
+
+        .result-container p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .result-container .highlight {
+            color: #ff6f3d;
+            font-weight: 500;
+        }
+
+        .skills-container,
+        .education-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .skills-container span,
+        .education-container span {
+            background-color: #ff6f3d;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .skills-container span:hover,
+        .education-container span:hover {
+            background-color: #e65b2d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Resume Screening AI System</h1>
+    </div>
+
+    <div class="container">
+        <h2>Upload Your Resume</h2>
+        <p>This system supports TXT and PDF files. Upload your resume and let our AI help with:</p>
+        <div class="features">
+            <ul>
+                <li>Resume Categorization</li>
+                <li>Job Recommendations</li>
+                <li>Information Extraction</li>
+            </ul>
+        </div>
+
+        <form action="/pred" method="post" enctype="multipart/form-data">
+            <input type="file" name="resume" accept=".pdf, .txt" required>
+            <input type="submit" value="Parse Your Resume">
+        </form>
+
+        {% if message %}
+        <p class="highlight">{{message}}</p>
+        {% endif %}
+
+        {% if predicted_category %}
+        <div class="result-container">
+            <hr>
+            <p><strong>Category:</strong> <span class="highlight">{{predicted_category}}</span></p>
+            <p><strong>Recommended Job:</strong> <span class="highlight">{{recommended_job}}</span></p>
+
+            <hr>
+            <h2>Extracted Information</h2>
+            <p><strong>Name:</strong> <span class="highlight">{{name}}</span></p>
+            <p><strong>Phone No:</strong> <span class="highlight">{{phone}}</span></p>
+            <p><strong>Email:</strong> <span class="highlight">{{email}}</span></p>
+
+            {% if extracted_skills %}
+            <h3>Skills</h3>
+            <div class="skills-container">
+                {% for skill in extracted_skills %}
+                <span>{{ skill }}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p>No skills found.</p>
+            {% endif %}
+
+            {% if extracted_education %}
+            <h3>Education</h3>
+            <div class="education-container">
+                {% for edu in extracted_education %}
+                <span>{{ edu }}</span>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p>No education details found.</p>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
