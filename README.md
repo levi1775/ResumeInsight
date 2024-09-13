@@ -91,14 +91,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **v1.0.0**: Initial release with resume categorization and job recommendation features.
 
-## Demo 
+## Preview
 
 Here is a demo of the resume parser in action:
 
-<video width="640" height="360" controls>
-  <source src="Demo/Recording 2024-08-25 195413.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+![Resume Parser Preview](Demo/resume_insight.png)
+
+
+
   
 
 ## References and Further Reading
