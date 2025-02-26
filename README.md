@@ -24,8 +24,8 @@ Follow these steps to set up the project locally:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/levi1775/ResumeParser.git
-   cd ResumeParser
+   git clone https://github.com/levi1775/ResumeInsight.git
+   cd ResumeInsight
 2. **Create and activate a virtual environment (optional but recommended)**:    
    ```bash
    python3 -m venv venv
